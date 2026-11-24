@@ -1,0 +1,96 @@
+/* Sets a consistent box-sizing model so element widths include padding and borders. */
+* { box-sizing: border-box; }
+/* Smoothly scrolls when the brand link returns to the top. */
+html { scroll-behavior: smooth; }
+/* Defines the page colors, font, and background. */
+:root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #e9edf5; background: #10131b; font-synthesis: none; text-rendering: optimizeLegibility; }
+/* Removes the browser's default margin and guarantees a full-height background. */
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #10131b; }
+/* Keeps the overall app at full height and paints the subtle background glow. */
+.app-shell { min-height: 100vh; background: radial-gradient(circle at 85% 0%, rgba(83, 63, 140, .18), transparent 34rem), #10131b; }
+/* Styles the top navigation and uses flexbox to space the logo and tagline. */
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem clamp(1rem, 5vw, 4rem); border-bottom: 1px solid #252b38; }
+/* Aligns the logo symbol and brand text horizontally. */
+.brand { display: inline-flex; align-items: center; gap: .7rem; color: #f7f8fb; text-decoration: none; font-size: 1.05rem; font-weight: 750; letter-spacing: -.02em; }
+/* Draws a small gradient square brand mark. */
+.brand-mark { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: .65rem; color: #10131b; font-weight: 900; background: linear-gradient(135deg, #9bf5bd, #64d9b2); }
+/* Styles the short header note. */
+.header-tagline { color: #8f98a9; font-size: .9rem; }
+/* Restricts and centers the page's main content. */
+.main-content { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+/* Adds vertical space around the hero introduction. */
+.intro-section { padding: clamp(3rem, 8vw, 6rem) 0 2.5rem; }
+/* Styles the small uppercase eyebrow labels. */
+.eyebrow { margin: 0 0 .8rem; color: #8fe8b8; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+/* Makes the hero heading large and responsive. */
+.intro-section h1 { max-width: 780px; margin: 0; color: #f5f7fb; font-size: clamp(2.35rem, 6vw, 4.5rem); line-height: 1.04; letter-spacing: -.055em; }
+/* Styles the hero explanation. */
+.intro-copy { max-width: 620px; margin: 1.2rem 0 0; color: #9da6b7; font-size: 1.08rem; line-height: 1.7; }
+/* Separates the catalog from the introduction. */
+.catalog-section { padding: 1rem 0 4rem; }
+/* Uses flexbox to align the catalog title and count. */
+.catalog-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.1rem; }
+/* Styles the catalog heading. */
+.catalog-heading h2 { margin: 0; font-size: 1.35rem; letter-spacing: -.025em; }
+/* Styles the number of matching games. */
+.result-count { color: #8791a3; font-size: .85rem; }
+/* Adds spacing to the search form. */
+.search-form { margin-bottom: 1.5rem; }
+/* Makes the search label visible and easy to read. */
+.search-label { display: block; margin-bottom: .5rem; color: #b5bdcb; font-size: .88rem; font-weight: 650; }
+/* Aligns the search icon and input inside the search box. */
+.search-input-wrap { display: flex; align-items: center; gap: .7rem; padding: 0 1rem; border: 1px solid #303747; border-radius: .85rem; background: #191e29; transition: border-color .18s, box-shadow .18s; }
+/* Highlights the search field when a user focuses it. */
+.search-input-wrap:focus-within { border-color: #8fe8b8; box-shadow: 0 0 0 3px rgba(143, 232, 184, .1); }
+/* Styles the search symbol. */
+.search-icon { color: #8f98a9; font-size: 1.5rem; line-height: 1; }
+/* Makes the text input fill the search wrapper. */
+.search-input-wrap input { width: 100%; min-width: 0; padding: 1rem 0; border: 0; outline: 0; color: #edf1f8; background: transparent; font: inherit; }
+/* Styles the placeholder text. */
+.search-input-wrap input::placeholder { color: #6f7889; }
+/* Creates the responsive game-card grid. */
+.game-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+/* Styles each game card with a border and hover transition. */
+.game-card { overflow: hidden; border: 1px solid #293140; border-radius: 1rem; background: #181d27; transition: transform .18s ease, border-color .18s ease; }
+/* Slightly lifts cards when a mouse hovers over them. */
+.game-card:hover { transform: translateY(-3px); border-color: #526273; }
+/* Makes the thumbnail area consistent. */
+.game-image-link { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: #242b37; }
+/* Fits the game artwork to the thumbnail box. */
+.game-image { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+/* Zooms the image slightly on card hover. */
+.game-card:hover .game-image { transform: scale(1.035); }
+/* Adds padding around the details below the artwork. */
+.game-card-content { display: flex; flex-direction: column; align-items: flex-start; padding: 1rem; }
+/* Styles game titles and gives them a minimum height for alignment. */
+.game-card h3 { min-height: 2.8rem; margin: 0 0 .7rem; color: #f1f4f9; font-size: 1.05rem; line-height: 1.35; }
+/* Aligns genre and platform tags in a wrapping row. */
+.game-meta { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .8rem; }
+/* Styles each metadata pill. */
+.game-meta span { padding: .3rem .55rem; border-radius: 999px; color: #a9eac6; background: #23352e; font-size: .72rem; }
+/* Gives descriptions a consistent height and muted color. */
+.game-description { min-height: 4.5rem; margin: 0 0 1rem; color: #98a2b3; font-size: .85rem; line-height: 1.6; }
+/* Styles the external game link. */
+.game-link { margin-top: auto; color: #9bf5bd; font-size: .88rem; font-weight: 700; text-decoration: none; }
+/* Underlines the game link on hover for clarity. */
+.game-link:hover { text-decoration: underline; }
+/* Styles the loading and empty-result messages. */
+.status-message { padding: 1.2rem; border: 1px solid #293140; border-radius: .8rem; color: #b4bdcb; background: #181d27; text-align: center; }
+/* Changes the error message to a warning color. */
+.error-message { border-color: #603b42; color: #ffc2c7; background: #2a1d24; }
+/* Adds spacing above the About/problem-statement section. */
+.about-section { margin: 1rem 0 4rem; padding: 1.6rem; border: 1px solid #293140; border-radius: 1rem; background: #171c26; }
+/* Styles the About heading. */
+.about-section h2 { margin: 0 0 .8rem; font-size: 1.5rem; letter-spacing: -.035em; }
+/* Styles the problem-statement paragraph. */
+.about-section p:last-child { max-width: 780px; margin: 0; color: #9da6b7; line-height: 1.7; }
+/* Styles the bottom footer and its separator. */
+.site-footer { padding: 1.5rem 1rem; border-top: 1px solid #252b38; color: #7f899a; text-align: center; font-size: .82rem; }
+/* Styles the API credit link. */
+.site-footer a { color: #a5edc2; text-decoration: none; }
+/* Underlines the API credit link on hover. */
+.site-footer a:hover { text-decoration: underline; }
+/* Adjust the grid to two columns on medium-sized screens. */
+@media (max-width: 900px) { .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Stacks cards and simplifies header spacing on narrow mobile screens. */
+@media (max-width: 600px) { .site-header { align-items: flex-start; flex-direction: column; gap: .45rem; } .header-tagline { font-size: .8rem; } .game-grid { grid-template-columns: 1fr; } .intro-section { padding-top: 3.25rem; } .about-section { padding: 1.2rem; } }
